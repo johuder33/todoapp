@@ -2,7 +2,8 @@ import {
     ADD_TODO,
     REMOVE_TODO,
     UPDATE_TODO,
-    TODO_STATUS
+    TODO_STATUS,
+    FILTER_TODO_BY
 } from '../../constants';
 
 export const removeTodo = (id) => {
@@ -28,7 +29,7 @@ export const markTodoAsPending = (id) => {
         type: UPDATE_TODO,
         payload: {
             id,
-            state: TODO_STATUS.pending
+            status: TODO_STATUS.pending
         }
     };
 }
@@ -38,7 +39,16 @@ export const markTodoAsDone = (id) => {
         type: UPDATE_TODO,
         payload: {
             id,
-            state: TODO_STATUS.done
+            status: TODO_STATUS.done
         }
     };
+}
+
+export const filterBy = (filter) => {
+    return {
+        type: FILTER_TODO_BY,
+        payload: {
+            filter
+        }
+    }
 }

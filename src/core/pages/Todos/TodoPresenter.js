@@ -3,7 +3,8 @@ import {
     removeTodo,
     markTodoAsDone,
     markTodoAsPending,
-    addTodo
+    addTodo,
+    filterBy
 } from './actions';
 import { TODO_STATUS } from '../../constants';
 
@@ -94,5 +95,19 @@ export default class TodoPresenter {
             ts: id,
             status: TODO_STATUS.pending
         }
+    }
+
+    static filterBy = (dispatch) => {
+        return (filter) => {
+            if (filter) {
+                dispatch(filterBy(filter));
+            }
+        }
+    }
+
+    static onFilter(filter) {
+        const { onFilter } = this.props;
+
+        onFilter(filter);
     }
 }

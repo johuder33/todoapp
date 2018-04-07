@@ -10,7 +10,7 @@ export default class TodoList extends Component {
             <div>
                 <List
                     dataSource={todos}
-                    renderItem={todo => <TodoItem todo={todo} onPendind={onPending} onRemove={onRemove} onDone={onDone} />}
+                    renderItem={todo => <TodoItem todo={todo} onPending={onPending} onRemove={onRemove} onDone={onDone} />}
                 />
             </div>
         );

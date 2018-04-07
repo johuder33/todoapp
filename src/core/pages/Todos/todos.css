@@ -1,3 +1,7 @@
 .todos-container {
     padding: 20px;
 }
+
+.letter-white, h2 {
+    color: #FFF;
+}

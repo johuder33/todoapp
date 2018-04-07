@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         removeTodo: TodoPresenter.removeTodoById(dispatch),
         markTodoAsDone: TodoPresenter.markTodoAsDone(dispatch),
-        markTodoAsPending: TodoPresenter.markTodoAsDone(dispatch),
+        markTodoAsPending: TodoPresenter.markTodoAsPending(dispatch),
     }
 }
 
