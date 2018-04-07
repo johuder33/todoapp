@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { List, Row, Col } from 'antd';
-import TodoMetaDisplay from './TodoMetaDisplay';
+import { List } from 'antd';
 import TodoPendingDisplay from './TodoPendingDisplay';
 import TodoDoneDisplay from './TodoDoneDisplay';
 import './todoitem.css';

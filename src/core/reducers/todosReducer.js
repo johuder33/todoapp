@@ -19,7 +19,7 @@ const initialState = {
         2: {
             id: 2,
             description: 'My tarea numero 2',
-            status: 'pending',
+            status: 'done',
             owner: 'Juorder',
             ts: Date.now()
         },
