@@ -1,19 +1,28 @@
 import { connect } from 'react-redux';
 import Todos from './todos';
+import TodoPresenter from './TodoPresenter';
 
 const mapStateToProps = (state) => {
     const { todos: todoState } = state;
-    const { ids, byIds } = todoState;
+    const { ids, byIds, filter } = todoState;
 
-    const todos = ids.map((id) => {
-        return byIds[id];
-    })
+    let todos = TodoPresenter.mapTodos(ids, byIds);
+    todos = TodoPresenter.filterTodosBy(filter, todos);
 
     return {
-        todos
+        todos,
+        filter
     };
 };
 
-const TodosContainer = connect(mapStateToProps)(Todos);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        removeTodo: TodoPresenter.removeTodoById(dispatch),
+        markTodoAsDone: TodoPresenter.markTodoAsDone(dispatch),
+        markTodoAsPending: TodoPresenter.markTodoAsDone(dispatch),
+    }
+}
+
+const TodosContainer = connect(mapStateToProps, mapDispatchToProps)(Todos);
 
 export default TodosContainer;
