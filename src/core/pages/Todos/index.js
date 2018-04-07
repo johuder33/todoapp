@@ -8,6 +8,7 @@ const mapStateToProps = (state) => {
 
     let todos = TodoPresenter.mapTodos(ids, byIds);
     todos = TodoPresenter.filterTodosBy(filter, todos);
+    todos = TodoPresenter.sortTodo(todos);
 
     return {
         todos,

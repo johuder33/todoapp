@@ -1,12 +1,26 @@
 import React, { Component } from 'react';
-import { List } from 'antd';
+import { List, Row, Col } from 'antd';
+import TodoMetaDisplay from './TodoMetaDisplay';
+import TodoPendingDisplay from './TodoPendingDisplay';
+import TodoDoneDisplay from './TodoDoneDisplay';
+import './todoitem.css';
+
+const ComponentByStatus = {
+    pending: TodoPendingDisplay,
+    done: TodoDoneDisplay
+}
 
 // TODO: must define propTypes for 'todo' as a Shape of Struct Todo
 export default class TodoItem extends Component {
     render() {
-        const { todo } = this.props;
+        const { todo, onRemove, onDone, onPending } = this.props;
+        const { status } = todo;
+        const TodoItemDisplay = ComponentByStatus[status];
+
         return (
-            <List.Item>{todo.description}</List.Item>
+            <List.Item>
+                <TodoItemDisplay onRemove={onRemove} onDone={onDone} onPending={onPending} todo={todo} />
+            </List.Item>
         );
     }
 }
