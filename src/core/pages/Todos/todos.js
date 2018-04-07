@@ -7,7 +7,7 @@ const { Sider, Content } = Layout;
 
 export default class Todos extends Component {
     render() {
-        const { todos } = this.props;
+        const { todos, markTodoAsDone, markTodoAsPending, removeTodo } = this.props;
         return (
             <Layout>
                 <Sider>
@@ -15,7 +15,7 @@ export default class Todos extends Component {
                 </Sider>
                 <Content className={'todos-container'}>
                     <TodoForm />
-                    <TodosList todos={todos} />
+                    <TodosList todos={todos} onDone={markTodoAsDone} onPending={markTodoAsPending} onRemove={removeTodo} />
                 </Content>
             </Layout>
         );

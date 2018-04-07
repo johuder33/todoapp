@@ -2,7 +2,8 @@ import {
     ADD_TODO,
     REMOVE_TODO,
     UPDATE_TODO,
-    FILTER_TODO_BY
+    FILTER_TODO_BY,
+    TODO_STATUS
 } from '../constants';
 
 const initialState = {
@@ -11,40 +12,40 @@ const initialState = {
         1: {
             id: 1,
             description: 'My tarea numero 1',
-            status: 'new',
+            status: 'pending',
             owner: 'Juorder',
             ts: Date.now()
         },
         2: {
             id: 2,
             description: 'My tarea numero 2',
-            status: 'new',
+            status: 'pending',
             owner: 'Juorder',
             ts: Date.now()
         },
         3: {
             id: 3,
             description: 'My tarea numero 3',
-            status: 'new',
+            status: 'pending',
             owner: 'Juorder',
             ts: Date.now()
         },
         4: {
             id: 4,
             description: 'My tarea numero 4',
-            status: 'new',
+            status: 'pending',
             owner: 'Juorder',
             ts: Date.now()
         },
         5: {
             id: 5,
             description: 'My tarea numero 5',
-            status: 'new',
+            status: 'pending',
             owner: 'Juorder',
             ts: Date.now()
         }
     },
-    filter: 'new'
+    filter: TODO_STATUS.pending
 };
 
 export const todosReducer = (state = initialState, action) => {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col, Input } from 'antd';
 import RenderConditional from '../../RenderConditional';
+import TodoPresenter from '../TodoPresenter';
 import './todoform.css';
 const InputWithButton = Input.Search;
 
@@ -27,6 +28,8 @@ export default class TodoForm extends Component {
                                 placeholder={'New Todo'}
                                 enterButton={'Add Todo'}
                                 value={todo}
+                                onChange={(event) => TodoPresenter.onChangeValueForm.call(this, event)}
+                                onSearch={(value) => TodoPresenter.onSaveTodo.call(this, value)}
                             />
                             <RenderConditional condition={Boolean(error)}>
                                 <span className={'error-hint'}>{error}</span>
