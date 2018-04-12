@@ -7,6 +7,7 @@ To use our amazing todo apps, you just need some few steps
 1. Clone this repository into your machine
 2. Once cloned, exec this command `yarn install`
 3. Once installed all dependencies, run this command `yarn start`
+4. Once all previous steps are done, please go to `http://localhost:3000/todos`
 4. That's all enjoy creating todo everwhere. :sunglasses:
 
 ## Project structure
